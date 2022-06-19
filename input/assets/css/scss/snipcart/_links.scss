@@ -1,0 +1,22 @@
+:root {
+    /* Default */
+    --color-link: var(--#{$prefix}alpha);
+    --borderColor-link: var(--#{$prefix}alpha);
+    --bgColor-link: var(--#{$prefix}main);
+
+    /* Hover */
+    --color-link-hover: #{customShift(--#{$prefix}alpha, $primary, 10%)};
+    --borderColor-link-hover: #{customShift(--#{$prefix}alpha, $primary, 10%)};
+    --bgColor-link-hover: var(--#{$prefix}main);
+
+    /* Active */
+    --color-link-active: #{customShift(--#{$prefix}alpha, $primary, 10%)};
+    --borderColor-link-active: #{customShift(--#{$prefix}alpha, $primary, 10%)};
+    --bgColor-link-active: var(--#{$prefix}main);
+
+    /* Focus */
+    --color-link-focus: #{customShift(--#{$prefix}alpha, $primary, 10%)};
+    --borderColor-link-focus: #{customShift(--#{$prefix}alpha, $primary, 10%)};
+    --bgColor-link-focus: var(--#{$prefix}main);
+    --shadow-link-focus: none;
+}

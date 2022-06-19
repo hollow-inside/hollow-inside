@@ -1,0 +1,16 @@
+:root {
+    /* Default (completed) */
+    --color-badge: var(--#{$prefix}alpha-accessible);
+    --borderColor-badge: var(--#{$prefix}main);
+    --bgColor-badge:  var(--#{$prefix}alpha);
+
+    /* Active */
+    --color-badge-active: var(--#{$prefix}alpha-accessible);
+    --borderColor-badge-active: var(--#{$prefix}main);
+    --bgColor-badge-active: #{customDarken(--#{$prefix}alpha, 10%)};
+
+    /* Disabled */
+    --color-badge-disabled: var(--#{$prefix}main);
+    --borderColor-badge-disabled: var(--#{$prefix}main);
+    --bgColor-badge-disabled: var(--#{$prefix}opposite);
+}

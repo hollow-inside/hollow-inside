@@ -1,0 +1,50 @@
+Title: Official Website
+Page: Home
+---
+
+<h1 class="visually-hidden">Hollow Inside</h1>
+<section class="container py-5 text-center">
+    <h2>Streaming On All Platforms</h2>
+    <ul class="list-inline d-flex justify-content-center mb-5">
+        <li class="list-inline-item me-0">
+            <a class="link-opposite" title="Stream Hollow Inside on Spotify" href="https://open.spotify.com/artist/0kTVRkZ7C5XPmnfvtrluEa?si=LLvAxIsMS7OUjLqPQnzVHA&amp;nd=1&amp;utm_medium=organic&amp;_branch_referrer=H4sIAAAAAAAAA72N3QqCMACFn2ZeamklBBJSSYGR%2FUl0E2u6XJvb2o9UT98KeoXgXBzOx8dpjJF6HARaCkPw04dS%2BoxwGkykEpVFJhGy5h4IB9gydraKJc1HAVEKwszlg%2F2fjUTrJqgM0caVHt2XW3qKp8Nj0XLcGcXsHIIo0wREszzv0sdSr3bx%2BnDL78WGv8pF%2Br2CjF0gon%2B4A%2BGIV472PVxDY1WdCHWFnKA3FJteOhkBAAA%3D&amp;product=open&amp;%24full_url=https%3A%2F%2Fopen.spotify.com%2Fartist%2F0kTVRkZ7C5XPmnfvtrluEa%3Fsi%3DLLvAxIsMS7OUjLqPQnzVHA&amp;feature=organic&amp;_branch_match_id=1042606425483017777" target="_blank" rel="noreferrer">
+                <i class="fa-brands fa-spotify fa-3x"></i>
+                <span class="visually-hidden">Stream Hollow Inside on Spotify</span>
+            </a>
+        </li>
+        <li class="list-inline-item mx-4">
+            <a class="link-opposite" title="Stream Hollow Inside on Apple Music" href="https://music.apple.com/us/artist/hollow-inside/1618067823" target="_blank" rel="noreferrer">
+                <i class="fa-brands fa-apple fa-3x"></i>
+                <span class="visually-hidden">Stream Hollow Inside on Apple Music</span>
+            </a>
+        </li>
+        <li class="list-inline-item">
+            <a class="link-opposite" title="Stream Hollow Inside on YouTube Music" href="https://music.youtube.com/channel/UCWRd4-GX_uDcw3aTqZP5WOg?feature=share" target="_blank" rel="noreferrer">
+                <i class="fa-brands fa-youtube fa-3x"></i>
+                <span class="visually-hidden">Stream Hollow Inside on YouTube Music</span>
+            </a>
+        </li>
+    </ul>
+    <div class="col-md-10 col-xl-6 mx-auto">
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/0kTVRkZ7C5XPmnfvtrluEa?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Spotify Hollow Inside playlist"></iframe>
+    </div>
+</section>
+<section class="container py-5 text-center">
+    <h2>Official Hollow Inside Merch</h2>
+    <div class="row">
+         @{
+            IDocument[] products = Outputs
+                .FromPipeline("Content")
+                .FilterSources("store/products/*.md")
+                .Where(x => x.GetString("IsActive").Equals("true"))
+                .Take(3)
+                .ToArray();
+            }
+
+            @foreach (IDocument document in products)
+            {
+                @Html.Partial("~/shared/_ProductBlurb.cshtml", (IDocument) document)
+            }
+    </div>
+    <a class="btn btn-lg btn-outline-opposite" href='@Context.GetLink("store")'>Shop All<i class="fa-solid fa-arrow-right ms-2"></i></a>
+</section>

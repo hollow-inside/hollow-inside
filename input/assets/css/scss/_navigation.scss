@@ -1,0 +1,24 @@
+@include media-breakpoint-only(xs) {
+    #topNav {
+        .list-social-media {
+            li:nth-child(n+5) {
+                display: none;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-only(md) {
+    #topNav {
+        .nav-link {
+            padding: .5rem;
+        }
+    }
+}
+
+.list-main-nav {
+    .nav-link.active {
+        font-weight: bold;
+        text-decoration: underline;
+    }
+}

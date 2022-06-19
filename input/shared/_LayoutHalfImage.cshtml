@@ -1,0 +1,17 @@
+@{
+    Layout = "_LayoutBase.cshtml";
+}
+
+<section class="container">
+    <div class="row align-items-center">
+        <div class="d-none d-md-flex col-md-6 col-xl-4 offset-xl-2 align-items-center justify-content-center py-5">
+            <img class="dark-theme max-w-315-px" src='/assets/images/illustrations/@Document.GetString("Image")-dark.png' alt="Hollow Inside">
+            <img class="light-theme max-w-315-px" src='/assets/images/illustrations/@Document.GetString("Image")-light.png' alt="Hollow Inside">
+        </div>
+        <div class="col-md-6 col-xl-4">
+            <div class="card card-sm-none card-body mt-5 mt-md-0 p-md-5">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</section>

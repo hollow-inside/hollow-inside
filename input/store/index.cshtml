@@ -1,0 +1,22 @@
+Title: Store
+Page: Store
+Excerpt: The official Hollow Inside store.
+---
+
+<section class="container pt-5 pb-4">
+    <h1 class="text-center">Official Store</h1>
+    <div class="row">
+         @{
+            IDocument[] products = Outputs
+                .FromPipeline("Content")
+                .FilterSources("store/products/*.md")
+                .Where(x => x.GetString("IsActive").Equals("true"))
+                .ToArray();
+            }
+
+            @foreach (IDocument document in products)
+            {
+                @Html.Partial("~/shared/_ProductBlurb.cshtml", (IDocument) document)
+            }
+    </div>
+</section>

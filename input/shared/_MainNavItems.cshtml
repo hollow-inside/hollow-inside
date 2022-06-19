@@ -1,0 +1,4 @@
+@*<li class="text-uppercase"><a href="#" class='nav-link @(Document.GetString("About") == "Store" ? "active" : "")'>About</a></li>
+<li class="text-uppercase"><a href="#" class='nav-link @(Document.GetString("Page") == "News" ? "active" : "")'>News</a></li>*@
+<li class="text-uppercase"><a href='@Context.GetLink("store")' class='nav-link p-2 @(Document.GetString("Page") == "Store" ? "active" : "")'>Store</a></li>
+<li class="text-uppercase"><a href='@Context.GetLink("contact")' class='nav-link p-2 @(Document.GetString("Page") == "Contact" ? "active" : "")'>Contact</a></li>

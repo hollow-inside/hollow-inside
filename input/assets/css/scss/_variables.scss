@@ -1,0 +1,136 @@
+// Font Awesome Free
+$fa-font-path: "/assets/fonts/fontawesome-free";
+
+// Body & font
+$font-special-elite:           'Special Elite', cursive;
+$font-hammersmith-one:         'Hammersmith One', sans-serif;
+$font-family-sans-serif:        $font-hammersmith-one;
+
+$fonts: (
+    "special-elite":        $font-special-elite,
+    "hammersmith-one":      $font-hammersmith-one
+);
+
+// Colors
+@import "../../../../node_modules/st3phhays-assets/css/scss/variables/colors";
+
+// Theme names
+$head-wound:         "head-wound";
+$tease:               "tease";
+
+// Theme map
+$themes: (
+    $head-wound: (
+        "alpha":                #0c8a92,
+        "beta":                 #dacd71,
+        "gamma":                #1d1d1d,
+        "delta":                #48354b,
+        "epsilon":              #5d2f39,
+        "pink":                 #f18c78,
+        "red":                  #dd434b,
+        "orange":               #df6540,
+        "yellow":               #f3ca5e,
+        "green":                #3d8214,
+        "cyan":                 #3d5f61,
+        "blue":                 #21496d,
+        "purple":               #48354b,
+        "magenta":              #5d2f39,
+        "gray":                 #343434,
+        "brown":                #fcdfbf,
+        "white":                #e3e3e3,
+        "black":                #121212,
+        "main":                 #121212,
+        "main-secondary":       #1d1d1d,
+        "opposite":             #e3e3e3,
+        "opposite-secondary":   #ffffff
+    ),
+    $tease: (
+        "alpha":                #0c8a92,
+        "beta":                 #dacd71,
+        "gamma":                #1d1d1d,
+        "delta":                #48354b,
+        "epsilon":              #5d2f39,
+        "pink":                 #f18c78,
+        "red":                  #dd434b,
+        "orange":               #df6540,
+        "yellow":               #f3ca5e,
+        "green":                #3d8214,
+        "cyan":                 #3d5f61,
+        "blue":                 #21496d,
+        "purple":               #48354b,
+        "magenta":              #5d2f39,
+        "gray":                 #343434,
+        "brown":                #fcdfbf,
+        "white":                #e3e3e3,
+        "black":                #121212,
+        "main":                 #e3e3e3,
+        "main-secondary":       #ffffff,
+        "opposite":             #121212,
+        "opposite-secondary":   #1d1d1d
+    )
+);
+
+$primary: #0c8a92;
+$red-blood: #dd434b;
+
+// Maps
+@import "../../../../node_modules/st3phhays-assets/css/scss/variables/maps";
+
+// Global
+@import "../../../../node_modules/st3phhays-assets/css/scss/variables/global";
+
+// Cards
+$card-border-radius:    0;
+$card-bg:               var(--#{$prefix}main);
+$card-border-color:     var(--#{$prefix}opposite);
+
+// Buttons
+$btn-border-radius:     0;
+$btn-border-radius-sm:  0;
+$btn-border-radius-lg:  0;
+
+// Forms
+$input-border-radius:       0;
+$input-border-radius-sm:    0;
+$input-border-radius-lg:    0;
+
+$input-bg:                              var(--#{$prefix}main);
+$input-color:                           var(--#{$prefix}opposite);
+$input-border-color:                    var(--#{$prefix}opposite);
+$input-focus-box-shadow-default:        inset 0 1px 2px rgb(0 0 0 / 8%), 0 0 0 0.25rem rgb(12 138 146 / 25%);
+$input-focus-box-shadow-error:          inset 0 1px 2px rgb(0 0 0 / 8%), 0 0 0 0.25rem rgb(221 67 75 / 25%);
+$input-focus-box-shadow-pass:           inset 0 1px 2px rgb(0 0 0 / 8%), 0 0 0 0.25rem rgb(61 130 20 / 25%);
+$input-placeholder-color:               var(--#{$prefix}opposite);
+$input-plaintext-color:                 var(--#{$prefix}opposite);
+$input-focus-border-color:              $primary;
+
+$form-check-input-border:               1px solid var(--#{$prefix}gray);
+$form-check-input-border-radius:        0;
+
+// Badges
+$badge-border-radius:   0;
+
+// Borders
+$border-color:          var(--#{$prefix}gray);
+
+// Carousels
+$carousel-control-color:             var(--#{$prefix}alpha);
+$carousel-control-width:             10%;
+$carousel-indicator-active-bg:       var(--#{$prefix}alpha);
+$carousel-indicator-width:           20px;
+$carousel-indicator-height:          20px;
+
+// Alerts
+$alert-border-radius:   0;
+
+// Nav Tabs
+$nav-link-color:                    var(--#{$prefix}white);
+$nav-link-hover-color:              var(--#{$prefix}alpha);
+$nav-tabs-link-active-color:        var(--#{$prefix}white);
+$nav-tabs-border-color:             var(--#{$prefix}gray);
+$nav-tabs-link-hover-border-color:  var(--#{$prefix}gray) var(--#{$prefix}gray) var(--#{$prefix}main);
+$nav-tabs-border-radius:            0;
+
+// Validation
+$form-feedback-icon-valid:          url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><path fill='#{$green-vine}' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/></svg>") !default;
+$form-feedback-icon-invalid:        url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='#{$red-barn}'><circle cx='6' cy='6' r='4.5'/><path stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/><circle cx='6' cy='8.2' r='.6' fill='#{$red-barn}' stroke='none'/></svg>") !default;

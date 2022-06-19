@@ -1,0 +1,12 @@
+Title: 404 Page Not Found
+Excerpt: Welp, you found a broken page. Click on a link in the top navigation to get back home.
+Image: robot
+CenteredLayout: true
+---
+@{
+    Layout = "/shared/_LayoutHalfImage.cshtml";
+}
+
+<h1 class="text-center">404 Page Not Found</h1>
+<p class="lead">Looks like your lost. If you can't find the page you are looking for, please <a href='@Context.GetLink("/contact")'>contact us</a>.</p>
+<a class="btn btn-outline-opposite mt-3" href="/"><i class="fa-solid fa-arrow-left me-2"></i>Back Home</a>

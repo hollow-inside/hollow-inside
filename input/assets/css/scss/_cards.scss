@@ -1,0 +1,7 @@
+@include media-breakpoint-down(sm) {
+    .card-sm-none {
+        background: transparent;
+        border: 0;
+        padding: 0;
+    }
+}

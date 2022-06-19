@@ -1,0 +1,76 @@
+:root {
+    /* ----------------------- 
+    PART: Input
+    ----------------------- */
+
+    --color-input: var(--#{$prefix}opposite);
+    --borderColor-input: var(--#{$prefix}opposite);
+    --bgColor-input: var(--#{$prefix}main);
+
+    /* Hover */
+    --color-input-hover: var(--#{$prefix}opposite);
+    --borderColor-input-hover: var(--#{$prefix}opposite);
+    --bgColor-input-hover: var(--#{$prefix}main);
+    --shadow-input-hover: none;
+
+    /* Focus */
+    --color-input-focus: var(--#{$prefix}opposite);
+    --borderColor-input-focus: var(--#{$prefix}alpha);
+    --bgColor-input-focus: var(--#{$prefix}main);
+    --shadow-input-focus: var(--#{$prefix}alpha);
+
+    /* Checked */
+    --color-input-checked: var(--#{$prefix}alpha-accessible);
+    --borderColor-input-checked: var(--#{$prefix}alpha);
+    --bgColor-input-checked: var(--#{$prefix}alpha);
+    --shadow-input-checked: none;
+
+    /* Disabled */
+    --color-input-disabled: var(--#{$prefix}opposite);
+    --borderColor-input-disabled: var(--#{$prefix}main-secondary);
+    --bgColor-input-disabled: var(--#{$prefix}main-secondary);
+
+    /* Error */
+    --color-input-error: var(--#{$prefix}opposite);
+    --borderColor-input-error: var(--#{$prefix}red);
+    --bgColor-input-error: var(--#{$prefix}main);
+
+    /* Autofill */
+    --bgColor-input-autofill: var(--#{$prefix}main-secondary);
+
+    /* ----------------------- 
+    PART: Label
+    ----------------------- */
+
+    --color-inputLabel: var(--#{$prefix}opposite);
+
+    /* Hover */
+    --color-inputLabel-hover: var(--#{$prefix}opposite);
+
+    /* Focus */
+    --color-inputLabel-focus: var(--#{$prefix}opposite);
+
+    /* ----------------------- 
+    PART: Icon
+    ----------------------- */
+
+    --color-inputIcon: var(--#{$prefix}opposite);
+
+    /* Hover */
+    --color-inputIcon-hover: var(--#{$prefix}opposite);
+
+    /* Focus */
+    --color-inputIcon-focus: var(--#{$prefix}opposite);
+
+    /* Checked */
+    --color-inputIcon-checked: var(--#{$prefix}opposite);
+
+    /* Disabled */
+    --color-inputIcon-error: var(--#{$prefix}opposite);
+
+    /* -----------------------
+        PART: Placeholder
+    ----------------------- */
+
+    --color-inputPlaceholder: var(--#{$prefix}opposite);
+}

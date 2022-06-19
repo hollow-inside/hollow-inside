@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" data-sh-theme-dark="head-wound" data-sh-theme-light="tease">
+<head>
+    @{
+        string title = Document.Keys.Contains(Keys.Title) ? "Hollow Inside | " + Document.GetString(Keys.Title) : "Hollow Inside";
+        string description = Document.GetString("Excerpt") != null ? Document.GetString("Excerpt") : "The official website for the band Hollow Inside.";
+        string ogImage = Document.ContainsKey("OgImage") ? Document.GetString("OgImage") : "hollow-inside-og.png";
+        string baseUrl = Context.GetLink().TrimEnd('/');
+    }
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#557efe">
+    @RenderSection("ExtraHeaders", required: false)
+    <meta name="description" content="@description" />
+    @* Open Graph data *@
+    <meta property="og:title" content="@title" />
+    <meta property="og:description" content="@description" />
+    <meta property="og:image" content='@baseUrl/assets/images/social-share/@ogImage' />
+    <meta property="og:site_name" content="Hollow Inside" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="@baseUrl@Document.GetLink()" />
+    @* Twitter Card data *@
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@@HollowInside316">
+    <meta name="twitter:creator" content="@@HollowInside316">
+    @* Apple Touch and Favicons *@
+    <link rel="icon" type="image/png" sizes="16x16" href='@baseUrl/favicon-16x16.png'>
+    <link rel="icon" type="image/png" sizes="32x32" href='@baseUrl/favicon-32x32.png'>
+    <link rel="icon" type="image/png" sizes="96x96" href='@baseUrl/favicon-96x96.png'>
+    <link rel="apple-touch-icon" href='@baseUrl/apple-touch-icon.png' />
+    <link rel="apple-touch-icon" sizes="152x152" href='@baseUrl/apple-touch-icon-152x152.png' />
+    <link rel="apple-touch-icon" sizes="167x167" href='@baseUrl/apple-touch-icon-167x167.png' />
+    <link rel="apple-touch-icon" sizes="180x180" href='@baseUrl/apple-touch-icon-180x180.png' />
+    <link rel="manifest" href="@baseUrl/site.webmanifest">
+    <title>@title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Press+Start+2P&family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href='@Context.GetLink("/assets/css/hollow-inside.bundle.min.css")'>
+    <script type="text/javascript" src='@Context.GetLink("/assets/js/hollow-inside.head.bundle.min.js")'></script>
+</head>
+<body class='@(Document.Keys.Contains("CenteredLayout") ? "bg-grunge-settle bg-img-cover" : "")'>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MZQRQ93" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script type="text/javascript" src='@Context.GetLink("/assets/js/hollow-inside.body.bundle.min.js")'></script>
+    <header class="bg-black d-flex flex-column">
+        <nav id="topNav" class="navbar navbar-expand-md w-100-percent border-bottom border-bottom-gray">
+            <div class="container-fluid">
+				<div class="row gx-0 d-flex align-items-center w-100-percent">
+					<a class='navbar-brand @(Document.GetString("Page") == "Home" ? "d-none d-sm-flex" : "") col-4 col-md-1 col-xl-4 me-0' href="/">
+						<img class='h-35-px @(Document.GetString("Page") == "Home" ? "d-none d-sm-block" : "")' src='@Context.GetLink("/assets/images/logo-dark.svg")' alt="Hollow Inside">
+					</a>
+					<div class='d-flex order-md-2 @(Document.GetString("Page") == "Home" ? "col-12 col-sm-8 justify-content-sm-end" : "col-8 justify-content-end") col-md-5 col-xl-4'>
+                        <ul class='nav d-flex align-items-center @(Document.GetString("Page") == "Home" ? "w-100-percent w-sm-auto" : "")'>
+                            <li class='nav-item @(Document.GetString("Page") == "Home" ? "" : "d-none d-sm-inline-block")'>
+                                <ul class="list-social-media nav-link list-inline list-style-none">
+                                    @Html.Partial("~/shared/_SocialMedia.cshtml")
+                                    <li class="list-inline-item ps-2 pe-md-2 pe-lg-0">
+                                        <span class="text-white">|</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class='nav-item @(Document.GetString("Page") == "Home" ? "ms-auto" : "")'>
+                                <div class="nav-link link-white p-0">
+                                    <label id="themeSelectorToggleContainer">
+                                        <input id="themeSelectorToggle" type="checkbox" title="Toggle website color theme">
+                                        <span id="themeSelectorToggleIcon"></span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <button class="btn nav-link link-white position-relative pe-0 snipcart-checkout" aria-label="View shopping cart">
+                                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" alt="" title="" style="height:29px;width:20px;"><path fill-rule="evenodd" clip-rule="evenodd" d="M51.714 20.47L55 60H9l3.286-39.53h9.857v-6.588C22.143 8.424 26.556 4 32 4c5.444 0 9.857 4.424 9.857 9.882v6.589h9.857zM25.43 13.883v16.47h-3.286v-6.587H15.31l-2.737 32.94h38.856l-2.737-32.94h-6.834v6.588h-3.286v-16.47c0-3.634-2.947-6.589-6.571-6.589-3.624 0-6.571 2.955-6.571 6.588zm3.285 9.883V20.47h6.572v3.294h-6.572z" fill="currentColor"></path></svg>
+                                    <span class="snipcart-items-count"></span>
+                                </button>
+                            </li>
+                        </ul>
+						<button class="btn d-md-none py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigationToggle" aria-controls="mainNavigationToggle" aria-expanded="false" aria-label="Toggle navigation">
+							<i class="fa-solid fa-bars text-white"></i>
+						</button>
+					</div>
+					<div id="mainNavigationToggle" class="collapse navbar-collapse col-md-6 col-xl-4">
+                        <ul class="list-main-nav list-inline d-md-flex align-items-md-center justify-content-xl-center position-relative mb-0 mx-xl-auto">
+                            @Html.Partial("~/shared/_MainNavItems.cshtml")
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        @if (Document.GetString("Page") == "Home")
+        {
+            <div class="container-xxl p-0">
+                <img class="w-100-percent h-100-percent" src='@Context.GetLink("/assets/images/headshots/band-couch-header-xxl.png")' alt="Hollow Inside">
+            </div>
+            <div class="bg-black py-2"></div>
+        }
+    </header>
+    <main role="main" class='@(Document.Keys.Contains("CenteredLayout") ? "mt-md-auto" : "")'>
+        @RenderBody()
+    </main>
+    <footer class="bg-black position-relative text-center">
+        <div id="cookieNotice" class="alert alert-white alert-dismissible fade show position-fixed bottom-0 start-0 end-0 mb-0 p-2 z-index-1 d-flex align-items-center justify-content-center d-none" role="alert">
+            <p class="small mb-0">hollowinsideofficial.com uses cookies to enhance the user experience of the site.</p>
+            <button type="button" class="btn btn-sm btn-black ms-2" data-bs-dismiss="alert" aria-label="Close">Accept</button>
+        </div>
+        @* @if (Document.GetString("Page") != "Contact" && Document.GetString("Page") != "Newsletter")
+        {
+            <div class="position-absolute bottom-0 start-0">
+                <img class="max-w-315-px" src='/assets/images/illustrations/eyeball-dark.png' alt="Hollow Inside">
+            </div>
+        } *@
+        <div class="container">
+            @if (Document.GetString("Page") != "Contact" && Document.GetString("Page") != "Newsletter")
+            {
+                <h2 class="text-center pt-5">Get Updates</h2>
+                <div class="col-md-10 mx-auto d-md-flex justify-content-md-center mb-5">
+                    <div class="form-floating mb-3 mb-md-0">
+                        <input type="text" class="form-control form-control-white bg-black" id="contactName" placeholder="John Doe" required>
+                        <label for="contactName">Name</label>
+                    </div>
+                    <div class="form-floating mb-3 mb-md-0 mx-md-3">
+                        <input type="email" class="form-control form-control-white bg-black" id="contactEmail" placeholder="name@example.com" required>
+                        <label for="contactEmail">Email Address</label>
+                    </div>
+                    <button class="btn btn-lg btn-outline-white mt-3 mt-md-0" type="submit">Subscribe</button>
+                </div>
+            }
+            <nav class="py-3">
+                <ul class="list-main-nav list-inline d-flex align-items-center justify-content-center position-relative">
+                    @Html.Partial("~/shared/_MainNavItems.cshtml")
+                </ul>
+                <ul class="list-social-media list-inline list-style-none d-flex align-items-center justify-content-center mb-0">
+                    @Html.Partial("~/shared/_SocialMedia.cshtml")
+                </ul>
+            </nav>
+            <p class="small">© @DateTime.Today.Year Hollow Inside</p>
+        </div>
+    </footer>
+    <script type="text/javascript" src='@Context.GetLink("/assets/js/hollow-inside.bundle.min.js")'></script>
+    @RenderSection("BottomScripts", required: false)
+</body>
+</html>

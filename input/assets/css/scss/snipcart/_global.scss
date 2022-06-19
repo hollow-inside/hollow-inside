@@ -1,0 +1,29 @@
+:root {
+    /* Default */
+    --color-default: var(--#{$prefix}opposite);
+    --borderColor-default: var(--#{$prefix}opposite);
+    --bgColor-default: var(--#{$prefix}main);
+
+    /* Alt */
+    --color-alt: var(--#{$prefix}opposite);
+    --bgColor-alt: var(--#{$prefix}main);
+
+    /* Modal */
+    --bgColor-modal: var(--#{$prefix}main);
+    --bgColor-modalVeil: #{customAlpha(--#{$prefix}main, 0.7)};
+
+    /* Icon */
+    --color-icon: var(--#{$prefix}opposite);
+
+    /* Success */
+    --color-success: var(--#{$prefix}opposite);
+    --bgColor-success: var(--#{$prefix}main);
+
+    /* Error */
+    --color-error: var(--#{$prefix}opposite);
+    --borderColor-error: var(--#{$prefix}red);
+    --bgColor-error: var(--#{$prefix}main);
+
+    /* Info */
+    --bgColor-info: var(--#{$prefix}main);
+}

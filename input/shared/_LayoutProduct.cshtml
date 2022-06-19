@@ -1,0 +1,101 @@
+@{
+    Layout = "_LayoutBase.cshtml";
+}
+@section BottomScripts
+{
+    <script type="text/javascript" src='@Context.GetLink("/assets/js/hollow-inside.store.bundle.min.js")'></script>
+}
+@{
+    IDocument[] products = Outputs
+        .FromPipeline("Content")
+        .FilterSources("store/products/*.md")
+        .Where(x => x.GetString("IsActive").Equals("true"))
+        .Where(x => x.GetString("ItemCatagories").Equals(Document.GetString("ItemCatagories")))
+        .Where(x => x.GetString("ItemId") != Document.GetString("ItemId"))
+        .Take(6)
+        .ToArray();
+}
+<section class="container py-5">
+    @{
+        IDocument root = OutputPages["store/index.html"].FirstOrDefault();
+                
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                @foreach (IDocument parent in OutputPages.GetAncestorsOf(Document, Document.IdEquals(root)).Reverse().Skip(1))
+                {
+                    string breadcrumbTitle = parent.GetTitle();
+
+                    if (breadcrumbTitle == root.GetTitle()) {
+                        breadcrumbTitle = "Store";
+                    }
+
+                    <li class="breadcrumb-item @(Document.IdEquals(root) ? "d-none" : null)">@Html.DocumentLink(parent, parent.GetString(Constants.BreadcrumbTitle, breadcrumbTitle))</li>
+                }
+                
+                <li class="breadcrumb-item active @(Document.IdEquals(root) ? "d-none" : null)" aria-current="page">@(Document.GetString(Keys.Title) ?? Document.GetTitle())</li>
+            </ol>
+        </nav>
+    }
+    <div class="row">
+        <div class="col-md-6 mb-3 mb-md-0">
+            <img class="border-opposite" src='/assets/images/store/products/@Document.GetString("ItemImage")' alt='@Document.GetString("Title")' title='@Document.GetString("Title")' height="600" width="600" />
+        </div>
+        <div class="col-md-6">
+            <h1 class="mb-2">@Document.GetString("Title")</h1>
+            <p class="h3 mb-5">$@Document.GetString("ItemPrice")</p>
+            @if (Document.GetList<string>("ItemCustom1Options") != null)
+            {
+                <div class="d-flex align-items-center">
+                @foreach(var size in Document.GetList<string>("ItemCustom1Options"))
+                {
+                    bool defaultSize = Document.GetList<string>("ItemCustom1Options").First() == size;
+
+                    <input type="radio" class="btn-check" name="productSize" id="@size" value="@size" autocomplete="off" @(defaultSize ? "checked" : "")>
+                    <label class="btn btn-outline-opposite me-1" for="@size">@size</label>
+                }
+                </div>
+            }
+            <div class="d-flex justify-content-center mt-3 mb-5">
+                <div class="form-floating me-3 w-30-percent">
+                    <input type="number" class="form-control" id="productQuantity" placeholder="1" value="1" min="1" required>
+                    <label for="productQuantity">Quantity</label>
+                </div>
+                <button id="addToCartButton" class="btn btn-lg btn-alpha d-block w-100-percent snipcart-add-item"
+                    data-item-id='@Document.GetString("ItemId")'
+                    data-item-url='https://hollowinsideofficial.netlify.app/store/@Document.GetString("ItemId")'
+                    data-item-price='@Document.GetString("ItemPrice")'
+                    data-item-weight='@Document.GetString("ItemWeight")'
+                    data-item-description='@Document.GetString("Excerpt")'
+                    data-item-image='/assets/images/store/products/@Document.GetString("ItemImage")'
+                    data-item-name='@Document.GetString("Title")'
+                    data-item-categories='@Document.GetString("ItemCatagories")'
+                    @if (Document.GetList<string>("ItemCustom1Options") != null)
+                    {
+                        var sizeOptions = String.Join("|", Document.GetList<string>("ItemCustom1Options"));
+
+                        <text>data-item-custom1-name='</text>@Document.GetString("ItemCustom1Name")<text>'</text>
+                        <text>data-item-custom1-options='</text>@sizeOptions<text>'</text>
+                        <text>data-item-custom1-required="true"</text>
+                    }
+                    >Add To Cart
+                </button>
+            </div>
+            <div class="border-top border-bottom pt-3">
+                <p class="lead text-uppercase">Details</p>
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</section>
+@if (products.Length != 0)
+{
+    <section id="relatedProducts" class="container">
+        <h2>Related in @Document.GetString("ItemCatagories")</h2>
+        <div class="row">
+            @foreach (IDocument document in products)
+            {
+                @Html.Partial("~/shared/_ProductBlurb.cshtml", (IDocument) document)
+            }
+        </div>
+    </section>
+}

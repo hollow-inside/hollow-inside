@@ -1,0 +1,9 @@
+@model IDocument;
+
+<div class="col-md-4 mb-4 text-center">
+    <a class="link-opposite" href="@Model.GetLink()" title='View @Model.GetString("Title")'>
+        <img class="border-opposite" src='/assets/images/store/products/@Model.GetString("ItemImage")' loading="lazy" width="500" height="500" alt='@Model.GetString("Title")'>
+        <h2 class="lead text-uppercase mt-3 mb-0">@Model.GetString("Title")</h2>
+        <p class="mb-0">$@Model.GetString("ItemPrice")</p>
+    </a>
+</div>

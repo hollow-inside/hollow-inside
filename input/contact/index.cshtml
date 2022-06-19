@@ -1,0 +1,24 @@
+Title: Contact Us
+Page: Contact
+Excerpt: Contact us and we'll get back to you.
+Image: robot
+CenteredLayout: true
+---
+
+<h1 class="text-center">Contact Us</h1>
+<form name="contact" method="POST" data-netlify="true" action="/contact/success" netlify-honeypot="bot-field">
+    <p class="d-none"><label>Don't fill this out if you're human: <input name="bot-field" /></label></p>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="contactName" placeholder="John Doe" required>
+        <label for="contactName" class="form-label">Name</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="contactEmail" placeholder="name@example.com" required>
+        <label for="contactEmail" class="form-label">Email Address</label>
+    </div>
+    <div class="form-floating mb-3">
+        <textarea class="form-control" id="contactMessage" placeholder="Leave a message here." style="height:150px" required></textarea>
+        <label for="contactMessage" class="form-label">Message</label>
+    </div>
+    <button class="btn btn-lg btn-opposite w-100-percent mt-3" type="submit">Submit</button>
+</form>

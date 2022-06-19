@@ -1,0 +1,5 @@
+.btn, button, .button {
+    &:not(.btn-link) {
+        text-transform: uppercase;
+    }
+}

@@ -1,0 +1,7 @@
+.form-floating .form-control.bg-black:focus {
+    color: var(--#{$prefix}white);
+}
+
+.form-control-white {
+    border: 1px solid var(--#{$prefix}white);
+}

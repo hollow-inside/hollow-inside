@@ -1,0 +1,11 @@
+.bg-grunge-black {
+    background-image: url("/assets/images/backgrounds/grunge-black.svg");
+}
+
+.bg-grunge-white, [data-sh-theme-mode="light"] .bg-grunge-settle {
+    background-image: url("/assets/images/backgrounds/grunge-white.svg");
+}
+
+.bg-grunge-gamma, [data-sh-theme-mode="dark"] .bg-grunge-settle {
+    background-image: url("/assets/images/backgrounds/grunge-gamma.svg");
+}

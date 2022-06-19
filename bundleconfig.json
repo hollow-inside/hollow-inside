@@ -1,0 +1,33 @@
+[
+  {
+    "outputFileName": "output/assets/css/hollow-inside.bundle.css",
+    "inputFiles": [
+      "output/assets/css/hollow-inside.css"
+    ]
+  },
+  {
+    "outputFileName": "output/assets/js/hollow-inside.head.bundle.js",
+    "inputFiles": [
+      "input/assets/js/head-google-tag-manager.js",
+      "output/assets/js/temp/head-theme-selector-toggle.js"
+    ]
+  },
+  {
+    "outputFileName": "output/assets/js/hollow-inside.body.bundle.js",
+    "inputFiles": [
+      "input/assets/js/body-snipcart.js"
+    ]
+  },
+  {
+    "outputFileName": "output/assets/js/hollow-inside.store.bundle.js",
+    "inputFiles": [
+      "input/assets/js/snipcart.js"
+    ]
+  },
+  {
+    "outputFileName": "output/assets/js/hollow-inside.bundle.js",
+    "inputFiles": [
+      "output/assets/js/temp/hollow-inside.js"
+    ]
+  }
+]

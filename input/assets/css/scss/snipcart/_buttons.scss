@@ -1,0 +1,112 @@
+:root {
+    /* ----------------------- 
+    PART: Primary
+    ----------------------- */
+
+    /* Default */
+    --color-buttonPrimary: var(--#{$prefix}alpha-accessible);
+    --borderColor-buttonPrimary: var(--#{$prefix}alpha);
+    --bgColor-buttonPrimary: var(--#{$prefix}alpha);
+
+    /* Hover */
+    --color-buttonPrimary-hover: var(--#{$prefix}alpha-accessible);
+    --borderColor-buttonPrimary-hover: #{customShift(--#{$prefix}alpha, $primary, 5%)};
+    --bgColor-buttonPrimary-hover: #{customShift(--#{$prefix}alpha, $primary, 5%)};
+    --shadow-buttonPrimary-hover: none;
+
+    /* Active */
+    --color-buttonPrimary-active: var(--#{$prefix}alpha-accessible);
+    --borderColor-buttonPrimary-active: #{customShift(--#{$prefix}alpha, $primary, 5%)};
+    --bgColor-buttonPrimary-active: #{customShift(--#{$prefix}alpha, $primary, 5%)};
+    --shadow-buttonPrimary-active: var(--#{$prefix}alpha);
+
+    /* Focus */
+    --color-buttonPrimary-focus: var(--#{$prefix}alpha-accessible);
+    --borderColor-buttonPrimary-focus: #{customShift(--#{$prefix}alpha, $primary, 5%)};
+    --bgColor-buttonPrimary-focus: #{customShift(--#{$prefix}alpha, $primary, 5%)};
+    --shadow-buttonPrimary-focus: var(--#{$prefix}alpha);
+
+    /* Success */
+    --color-buttonPrimary-success: var(--#{$prefix}green-accessible);
+    --borderColor-buttonPrimary-success: var(--#{$prefix}green);
+    --bgColor-buttonPrimary-success: var(--#{$prefix}green);
+
+    /* Error */
+    --color-buttonPrimary-error: var(--#{$prefix}red-accessible);
+    --borderColor-buttonPrimary-error: var(--#{$prefix}red);
+    --bgColor-buttonPrimary-error: var(--#{$prefix}red);
+
+    /* ----------------------- 
+    PART: Secondary
+    ----------------------- */
+
+    /* Default */
+    --color-buttonSecondary: var(--#{$prefix}main);
+    --borderColor-buttonSecondary: var(--#{$prefix}opposite);
+    --bgColor-buttonSecondary: var(--#{$prefix}opposite);
+
+    /* Hover */
+    --color-buttonSecondary-hover: var(--#{$prefix}main);
+    --borderColor-buttonSecondary-hover: var(--#{$prefix}opposite-secondary);
+    --bgColor-buttonSecondary-hover: var(--#{$prefix}opposite-secondary);
+    --shadow-buttonSecondary-hover: none;
+
+    /* Active */
+    --color-buttonSecondary-active: var(--#{$prefix}main);
+    --borderColor-buttonSecondary-active: var(--#{$prefix}opposite-secondary);
+    --bgColor-buttonSecondary-active: var(--#{$prefix}opposite-secondary);
+    --shadow-buttonSecondary-active: var(--#{$prefix}opposite);
+
+    /* Focus */
+    --color-buttonSecondary-focus: var(--#{$prefix}main);
+    --borderColor-buttonSecondary-focus: var(--#{$prefix}opposite-secondary);
+    --bgColor-buttonSecondary-focus: var(--#{$prefix}opposite-secondary);
+    --shadow-buttonSecondary-focus: var(--#{$prefix}opposite);
+
+    /* Success */
+    --color-buttonSecondary-success: var(--#{$prefix}green-accessible);
+    --borderColor-buttonSecondary-success: var(--#{$prefix}green);
+    --bgColor-buttonSecondary-success: var(--#{$prefix}green);
+
+    /* Error */
+    --color-buttonSecondary-error: var(--#{$prefix}red-accessible);
+    --borderColor-buttonSecondary-error: var(--#{$prefix}red);
+    --bgColor-buttonSecondary-error: var(--#{$prefix}red);
+
+    /* ----------------------- 
+    PART: Danger
+    ----------------------- */
+
+    /* Default */
+    --color-buttonDanger: var(--#{$prefix}red-accessible);
+    --borderColor-buttonDanger: var(--#{$prefix}red);
+    --bgColor-buttonDanger: var(--#{$prefix}red);
+
+    /* Hover */
+    --color-buttonDanger-hover: var(--#{$prefix}red-accessible);
+    --borderColor-buttonDanger-hover: #{customShift(--#{$prefix}red, $red-blood, 5%)};
+    --bgColor-buttonDanger-hover: #{customShift(--#{$prefix}red, $red-blood, 5%)};
+    --shadow-buttonDanger-hover: none;
+
+    /* Active */
+    --color-buttonDanger-active: var(--#{$prefix}red-accessible);
+    --borderColor-buttonDanger-active: #{customShift(--#{$prefix}red, $red-blood, 5%)};
+    --bgColor-buttonDanger-active: #{customShift(--#{$prefix}red, $red-blood, 5%)};
+    --shadow-buttonDanger-active: var(--#{$prefix}red);
+
+    /* Focus */
+    --color-buttonDanger-focus: var(--#{$prefix}red-accessible);
+    --borderColor-buttonDanger-focus: #{customShift(--#{$prefix}alpha, $red-blood, 5%)};
+    --bgColor-buttonDanger-focus: #{customShift(--#{$prefix}alpha, $red-blood, 5%)};
+    --shadow-buttonDanger-focus: var(--#{$prefix}red);
+
+    /* Success */
+    --color-buttonDanger-success: var(--#{$prefix}green-accessible);
+    --borderColor-buttonDanger-success: var(--#{$prefix}green);
+    --bgColor-buttonDanger-success: var(--#{$prefix}green);
+
+    /* Error */
+    --color-buttonDanger-error: var(--#{$prefix}red-accessible);
+    --borderColor-buttonDanger-error: var(--#{$prefix}red);
+    --bgColor-buttonDanger-error: var(--#{$prefix}red);
+}
